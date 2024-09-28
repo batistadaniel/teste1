@@ -8,5 +8,19 @@
 </head>
 <body>
     <h1>Teste de Cor da Barra de Navegação</h1>
+    <p>Este site foi visitado <span id="visit-counter">0</span> vezes.</p>
+
+    <script>
+        // Defina a URL da API com um namespace e contador personalizados
+        const endpoint = 'https://api.countapi.xyz/hit/batistadaniel/teste1-contador';
+
+        // Chama a API e atualiza o contador
+        fetch(endpoint)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visit-counter').innerText = data.value;
+            })
+            .catch(error => console.error('Erro ao obter o contador:', error));
+    </script>
 </body>
 </html>
